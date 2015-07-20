@@ -1,0 +1,66 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+button, .btn
+{
+    outline: none !important;
+
+    &.btn-default
+    {
+        background: #FFFFFF;
+    }
+
+    &.btn-primary
+    {
+        letter-spacing: 1px;
+        
+        background: #4898C8;
+
+        border-top-color: #4898E8;
+        border-left-color: #2878C8;
+        border-right-color: #2878C8;
+        border-bottom-color: #0868A8;
+
+        color: #FFFFFF;
+
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+        @include linear-gradient(#4898C8, #0868C8);
+
+        @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
+    }
+
+    &.btn-success
+    {
+        letter-spacing: 1px;
+        
+        background: #489828;
+
+        border-top-color: #48B828;
+        border-left-color: #287808;
+        border-right-color: #287808;
+        border-bottom-color: #004800;
+
+        color: #FFFFFF;
+
+        text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.1);
+
+        @include linear-gradient(#489828, #086800);
+
+        @include box-shadow(0 1px 0 rgba(0, 0, 0, 0.15));
+    }
+}
+
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group
+{
+    &.btn-primary, &.btn-success
+    {
+        margin-left: 0;
+    }
+}
+
+a
+{
+    color: #2878C8;
+}

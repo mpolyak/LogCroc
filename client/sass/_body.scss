@@ -1,0 +1,47 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+html, body
+{
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+}
+
+body > section
+{
+    position: relative;
+
+    min-height: 100%;
+
+    > header
+    {
+        position: absolute;
+
+        width: 100%;
+        height: 50px;
+
+        left: 0;
+        top: 0;
+    }
+
+    > article
+    {
+        height: 100%;
+
+        padding: 50px 0;
+    }
+
+    > footer
+    {
+        position: absolute;
+
+        width: 100%;
+        height: 50px;
+
+        left: 0;
+        bottom: 0;
+    }
+}

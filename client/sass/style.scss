@@ -1,0 +1,89 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+// Mixins
+@mixin linear-gradient($stops...)
+{
+    background-image: -webkit-linear-gradient($stops);
+    background-image:    -moz-linear-gradient($stops);
+    background-image:      -o-linear-gradient($stops);
+    background-image:         linear-gradient($stops);
+}
+
+@mixin box-shadow($shadow...)
+{
+    -webkit-box-shadow: $shadow;
+       -moz-box-shadow: $shadow;
+            box-shadow: $shadow;
+}
+
+@mixin border-box
+{
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+
+@mixin border-radius($radius...)
+{
+    -webkit-border-radius: $radius;
+       -moz-border-radius: $radius;
+        -ms-border-radius: $radius;
+            border-radius: $radius;
+}
+
+@mixin transition($transition...)
+{
+    -webkit-transition: $transition;
+       -moz-transition: $transition;
+        -ms-transition: $transition;
+         -o-transition: $transition;
+            transition: $transition;
+}
+
+@mixin transform($transforms)
+{
+    -webkit-transform: $transforms;
+       -moz-transform: $transforms;
+        -ms-transform: $transforms;
+         -o-transform: $transforms;
+            transform: $transforms;
+}
+
+@mixin appearance($appearance)
+{
+    -webkit-appearance: $appearance;
+       -moz-appearance: $appearance;
+            appearance: $appearance;
+}
+
+%text-truncate
+{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+%no-select
+{
+    -webkit-touch-callout: none;
+      -webkit-user-select: none;
+       -khtml-user-select: none;
+         -moz-user-select: none;
+          -ms-user-select: none;
+              user-select: none;
+}
+
+// Globals
+@import "body";
+@import "form";
+@import "navbar";
+@import "buttons";
+
+// Views
+@import "views/demo";
+@import "views/meta";
+@import "views/index";
+@import "views/report";
+@import "views/dashboard";

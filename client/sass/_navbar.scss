@@ -1,0 +1,23 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+.navbar
+{
+	&.navbar-static-bottom
+	{
+		@include border-radius(0);
+	}
+
+	.navbar-right
+	{
+		position: absolute;
+
+		top: 0;
+		right: 0;
+		
+		margin-right: 15px;
+
+		@extend %text-truncate;
+	}
+}

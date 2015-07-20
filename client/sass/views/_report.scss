@@ -1,0 +1,151 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+.report-view
+{
+    background-color: #F0F0F0;
+
+    .navbar-default
+    {
+        .navbar-brand
+        {
+            font-weight: 300;
+
+            letter-spacing: 2px;
+        }
+
+        &.navbar-static-bottom
+        {
+            background-color: #E8E8E8;
+        }
+    }
+
+    .navbar-inverse
+    {
+        background-color: #585858;
+
+        border-color: transparent;
+
+        .navbar-brand
+        {
+            font-weight: 300;
+
+            letter-spacing: 2px;
+
+            color: #FFFFFF;
+        }
+    }
+
+    article
+    {
+        h1, h3, blockquote, cite, td, th
+        {
+            font-family: "Lucida Grande", Tahoma, Verdana, Arial, sans-serif;
+        }
+
+        th
+        {
+            font-size: 12px;
+            font-weight: 600;
+
+            border-bottom: none !important;
+        }
+
+        td
+        {
+            font-size: 12px;
+            font-weight: 400;
+
+            border-top-color: #EEEEEE !important;
+
+            &:not(:first-child)
+            {
+                 border-left: 1px solid #EEEEEE;
+            }
+        }
+
+        h1
+        {
+            margin-bottom: 40px;
+
+            font-size: 24px;
+            font-weight: 300;
+
+            line-height: 24px;
+
+            letter-spacing: 2px;
+
+            text-align: center;
+
+            color: #585858;
+        }
+
+        h3
+        {
+            margin-top: 0;
+
+            font-size: 14px;
+            font-weight: 400;
+
+            line-height: 16px;
+        }
+
+        blockquote
+        {
+            margin: 0;
+            padding: 0 15px;
+
+            margin-bottom: 10px;
+
+            overflow: hidden;
+
+            white-space: pre-wrap;
+
+            font-size: 12px;
+            font-weight: 400;
+
+            border: none;
+        }
+
+        cite
+        {
+            display: block;
+
+            margin-bottom: 10px;
+
+            font-size: 12px;
+            font-weight: 600;
+            font-style: normal;
+        }
+
+        .container-fluid
+        {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            .row
+            {
+                margin-left: inherit;
+                margin-right: inherit;
+            }
+        }
+
+        .well
+        {
+            overflow: hidden;
+
+            background-color: #FFFFFF;
+
+            border-color: #E0E0E0;
+
+            @include box-shadow(0 1px 1px rgba(0, 0, 0, 0.025));
+
+            hr
+            {
+                margin-left: -25px;
+                margin-right: -25px;
+            }
+        }
+    }
+}

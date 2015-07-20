@@ -1,0 +1,438 @@
+/*
+ * Copyright (c) Michael Polyak. All rights reserved.
+ */
+
+.dashboard-view
+{
+    background-color: #282828;
+
+    .navbar-brand
+    {
+        font-weight: 300;
+
+        letter-spacing: 2px;
+    }
+
+    .navbar-inverse
+    {
+        background-color: #181818;
+    }
+
+    article
+    {
+        .container-fluid
+        {
+            padding-top: 30px;
+            padding-bottom: 30px;
+
+            .row
+            {
+                margin-left: inherit;
+                margin-right: inherit;
+            }
+        }
+    }
+
+    .alert
+    {
+        min-height: 100px;
+
+        margin-bottom: 25px;
+
+        border-color: #383838;
+
+        color: #101010;
+
+        @extend %text-truncate;
+
+        &.alert-success
+        {
+            background-color: #38A838;
+
+            code, li
+            {
+                color: #000000;
+
+                background-color: #48B848;
+
+                border-bottom: 1px solid #389838;
+
+                &.active
+                {
+                    background-color: #389838;
+
+                    border-bottom-color: #38B838;
+                }
+            }
+        }
+
+        &.alert-warning
+        {
+            background-color: #E8A838;
+
+            code, li
+            {
+                color: #000000;
+
+                background-color: #F8B848;
+
+                border-bottom: 1px solid #D89828;
+
+                &.active
+                {
+                    background-color: #D89828;
+
+                    border-bottom-color: #F8B838;
+                }
+            }
+        }
+
+        &.alert-danger
+        {
+            background-color: #E83838;
+
+            code, li
+            {
+                color: #000000;
+
+                background-color: #F84848;
+
+                border-bottom: 1px solid #D83838;
+
+                &.active
+                {
+                    background-color: #D83838;
+
+                    border-bottom-color: #F83838;
+                }
+            }
+        }
+
+        strong
+        {
+            font-size: 18px;
+
+            letter-spacing: 1px;
+
+            &.status
+            {
+                &:before
+                {
+                    content: "";
+
+                    position: relative;
+
+                    display: inline-block;
+
+                    margin-right: 8px;
+
+                    width: 10px;
+                    height: 10px;
+
+                    top: -1px;
+
+                    @include border-radius(10px);
+                }
+
+                &.status-warning:before
+                {
+                    background-color: #E8A838;
+                }
+
+                &.status-danger:before
+                {
+                    background-color: #E83838;
+                }
+            }
+        }
+
+        span.timezone
+        {
+            position: absolute;
+
+            top: 10px;
+            right: 30px;
+
+            font-size: 80%;
+            font-weight: 600;
+
+            @extend %no-select;
+        }
+
+        i.link
+        {
+            padding: 5px;
+
+            cursor: pointer;
+        }
+
+        div
+        {
+            margin-top: -2px;
+        }
+
+        code
+        {
+            display: block;
+
+            margin-top: 10px;
+
+            padding: 10px;
+
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+            font-size: 14px;
+
+            letter-spacing: 1px;
+
+            overflow: hidden;
+
+            white-space: pre-wrap;
+
+            color: #D9D9D9;
+
+            background-color: rgba(0, 0, 0, 0.5);
+
+            a
+            {
+                float: right;
+
+                i
+                {
+                    padding: 5px;
+                }
+            }
+        }
+
+        a
+        {
+            font-size: 80%;
+
+            text-decoration: none;
+
+            color: #101010;
+
+            &:hover
+            {
+                text-decoration: underline;
+            }
+        }
+
+        small
+        {
+            position: relative;
+            
+            top: 12px;
+
+            font-size: 100%;
+        }
+
+        ul
+        {
+            margin-left: -2px;
+
+            padding: 0;
+
+            list-style-type: none;
+
+            li
+            {
+                float: left;
+
+                margin: 2px;
+
+                padding: 5px 10px;
+
+                letter-spacing: 1px;
+
+                cursor: pointer;
+
+                @include border-radius(4px);
+
+                @extend %no-select;
+
+                &:before
+                {
+                    content: "";
+
+                    position: relative;
+
+                    display: inline-block;
+
+                    margin-right: 8px;
+
+                    width: 10px;
+                    height: 10px;
+
+                    @include border-radius(10px);
+                }
+
+                &.alert-success:before
+                {
+                    background-color: #00FF00;
+                }
+
+                &.alert-warning:before
+                {
+                    background-color: #FFFF00;
+                }
+
+                &.alert-danger:before
+                {
+                    background-color: #FF0000;
+                }
+            }
+        }
+    }
+
+    .panel
+    {        
+        color: #9D9D9D;
+
+        background-color: transparent;
+
+        border-color: #383838;
+
+        @include border-radius(4px);
+
+        @include box-shadow(none);
+
+        .panel-heading
+        {
+            color: #9D9D9D;
+
+            border-color: #383838;
+
+            background-color: #303030;
+
+            .panel-title
+            {
+                font-weight: 300;
+
+                letter-spacing: 2px;
+            }
+
+            .label
+            {                
+                padding-top: 0.3em;
+
+                font-size: 80%;
+                font-weight: 300;
+
+                letter-spacing: 2px;
+
+                background-color: transparent;
+
+                @include border-radius(0);
+
+                &.label-warning
+                {
+                    color: #E8A838;
+                }
+
+                &.label-danger
+                {
+                    color: #E83838;
+                }
+
+                &.label-info
+                {
+                    color: #38A8E8;
+                }
+            }
+            
+            ul
+            {
+                float: right;
+
+                list-style-type: none;
+
+                margin: 0;
+                padding: 0;
+
+                li
+                {
+                    display: inline-block;
+
+                    margin-left: 5px;
+                }
+            }
+        }
+
+        .panel-body
+        {
+            padding: 0;
+        }
+
+        svg
+        {
+            .axis
+            {
+                fill: none;
+
+                stroke: #303030;
+
+                shape-rendering: crispEdges;
+
+                &.x
+                {
+                    stroke: none;
+
+                    .tick
+                    {
+                        stroke: #303030;
+                    }
+                }
+            }
+
+            .line
+            {
+                fill: none;
+
+                stroke: #9D9D9D;
+
+                stroke-width: 1.5px;
+
+                &.error
+                {
+                    stroke: #E83838;
+                }
+
+                &.warning
+                {
+                    stroke: #E8A838;
+                }
+            }
+
+            .tick
+            {
+                text
+                {
+                    stroke: #9D9D9D;
+
+                    font-size: 12px;
+                    font-weight: 300;
+
+                    letter-spacing: 2px;
+
+                    text-rendering: geometricPrecision;
+                }
+            }
+
+            circle
+            {
+                fill: #9D9D9D;
+
+                &.error
+                {
+                    fill: #E83838;
+                }
+
+                &.warning
+                {
+                    fill: #E8A838;
+                }
+            }
+        }
+    }
+}

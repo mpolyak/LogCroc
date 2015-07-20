@@ -1,0 +1,685 @@
+{
+    "accounts":
+    [
+        {
+            "name": "Customer",
+
+            "dashboards":
+            [
+                {
+                    "name": "Customer - Web",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "web"}
+                    ],
+
+                    "summary": ["reports@customer.com"],
+
+                    "servers":
+                    [
+                        {
+                            "name": "Server 1",
+
+                            "timezone": 480,
+
+                            "host": "https://server1.customer.com",
+                            "auth": "username:password",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table":
+                                    {
+                                        "name": "Customer - Connector",
+                                        "file": "/web/connector?view=status"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} web.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 2",
+
+                            "timezone": -300,
+
+                            "host": "https://server2.customer.com",
+                            "auth": "username:password",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table": 
+                                    {
+                                        "name": "Customer - Connector",
+                                        "file": "/web/connector?view=status"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} web.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 3",
+
+                            "timezone": 0,
+
+                            "host": "https://server3.customer.com",
+                            "auth": "username:password",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table": 
+                                    {
+                                        "name": "Customer - Connector",
+                                        "file": "/web/connector?view=status"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} web.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Customer - Processor",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "processor"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                       {
+                            "name": "Server 1",
+
+                            "timezone": 480,
+
+                            "host": "https://server1.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 2",
+
+                            "timezone": -300,
+
+                            "host": "https://server2.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 3",
+
+                            "timezone": 0,
+
+                            "host": "https://server3.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 15,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Customer - Email",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "email"}
+                    ],
+
+                    "summary": ["reports@customer.com"],
+
+                    "servers":
+                    [
+                       {
+                            "name": "Server 1",
+
+                            "timezone": 480,
+
+                            "host": "https://server1.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 60,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 4,
+
+                                    "warning":
+                                    {
+                                        "persist": -60,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last hour."
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": -480,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last 8 hours."
+                                    }
+                                },
+
+                                "message": {"start": 4, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 2",
+
+                            "timezone": -300,
+
+                            "host": "https://server2.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 60,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 4,
+
+                                    "warning":
+                                    {
+                                        "persist": -60,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last hour."
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": -480,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last 8 hours."
+                                    }
+                                },
+
+                                "message": {"start": 4, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Server 3",
+
+                            "timezone": 0,
+
+                            "host": "https://server3.customer.com",
+                            "auth": "username:password",
+
+                            "status":
+                            {
+                                "file": "/logs/{yyyy}-{mm}-{dd} processor.log",
+
+                                "refresh": 60,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 4,
+
+                                    "warning":
+                                    {
+                                        "persist": -60,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last hour."
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": -480,
+
+                                        "values": ["Info Customer.Server.Processor.Email"],
+
+                                        "message": "Email not sent in the last 8 hours."
+                                    }
+                                },
+
+                                "message": {"start": 4, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/web/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Customer - Connector",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "connector"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                       {
+                            "name": "Server 1",
+
+                            "timezone": 480,
+
+                            "host": "https://server1.customer.com",
+                            "auth": "username:password",
+
+                            "table":
+                            {
+                                "file": "/web/connector?view=status",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": "^(.*)\\s+\\[.*$"
+                                },
+
+                                "version": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 7,
+
+                                    "regex": "^(.*)\\s+\\(.*$"
+                                },
+
+                                "status": {
+                                    "column": 9,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 9,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Server 2",
+
+                            "timezone": -300,
+
+                            "host": "https://server2.customer.com",
+                            "auth": "username:password",
+
+                            "table":
+                            {
+                                "file": "/web/connector?view=status",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": "^(.*)\\s+\\[.*$"
+                                },
+
+                                "version": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 7,
+
+                                    "regex": "^(.*)\\s+\\(.*$"
+                                },
+
+                                "status": {
+                                    "column": 9,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 9,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Server 3",
+
+                            "timezone": 0,
+
+                            "host": "https://server3.customer.com",
+                            "auth": "username:password",
+
+                            "table":
+                            {
+                                "file": "/web/connector?view=status",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": "^(.*)\\s+\\[.*$"
+                                },
+
+                                "version": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 7,
+
+                                    "regex": "^(.*)\\s+\\(.*$"
+                                },
+
+                                "status": {
+                                    "column": 9,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 9,
+
+                                    "regex": ""
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

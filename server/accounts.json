@@ -1,0 +1,776 @@
+{
+    "accounts":
+    [
+        {
+            "name": "LogCroc",
+            
+            "dashboards":
+            [
+                {
+                    "name": "Meta",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "meta"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                        {
+                            "name": "LogCroc",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/meta",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "alias": "Memory",
+
+                                    "status": 
+                                    {
+                                        "name": "Meta - Server",
+                                        "file": "/memwatch"
+                                    },
+
+                                    "version":
+                                    {
+                                        "name": "Meta - Server",
+                                        "file": "/version"
+                                    }
+                                },
+
+                                {
+                                    "alias": "Processor",
+
+                                    "status": 
+                                    {
+                                        "name": "Meta - Server",
+                                        "file": "/cpuwatch"
+                                    },
+
+                                    "version":
+                                    {
+                                        "name": "Meta - Server",
+                                        "file": "/version"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/log",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 2},
+
+                                "status":
+                                {
+                                    "start": 2, "end": 3,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["WARN"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["ERROR", "FATAL"]
+                                    }
+                                },
+
+                                "message": {"start": 3, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Meta - Server",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "meta-server"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                        {
+                            "name": "Memory",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/meta",
+                            "auth": "",
+
+                            "status":
+                            {
+                                "file": "/memwatch",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["WARN"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["ERROR"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                        {
+                            "name": "Processor",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/meta",
+                            "auth": "",
+
+                            "status":
+                            {
+                                "file": "/cpuwatch",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["WARN"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["FATAL", "ERROR"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Demo",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "demo"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                        {
+                            "name": "Darwin's Zoo Escape",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/0",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table": 
+                                    {
+                                        "name": "Demo - Sensors",
+                                        "file": "/sensors"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/customer",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                       {
+                            "name": "Uluru's Billabong Aquarium",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/1",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table": 
+                                    {
+                                        "name": "Demo - Sensors",
+                                        "file": "/sensors"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/customer",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                       {
+                            "name": "Outback Croc House",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/2",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table":
+                                    {
+                                        "name": "Demo - Sensors",
+                                        "file": "/sensors"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/customer",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                       {
+                            "name": "Dundee's Wildlife Sanctuary",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/3",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table":
+                                    {
+                                        "name": "Demo - Sensors",
+                                        "file": "/sensors"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/customer",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        },
+
+                       {
+                            "name": "Reptile Adventure Park",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/4",
+                            "auth": "",
+
+                            "dependencies":
+                            [
+                                {
+                                    "table":
+                                    {
+                                        "name": "Demo - Sensors",
+                                        "file": "/sensors"
+                                    }
+                                }
+                            ],
+
+                            "status":
+                            {
+                                "file": "/customer",
+
+                                "refresh": 5,
+
+                                "timestamp": {"start": 0, "end": 1},
+
+                                "status":
+                                {
+                                    "start": 1, "end": 2,
+
+                                    "warning":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Warn"]
+                                    },
+
+                                    "error":
+                                    {
+                                        "persist": 5,
+
+                                        "values": ["Error", "Fatal"]
+                                    }
+                                },
+
+                                "message": {"start": 2, "end": -1}
+                            },
+
+                            "version":
+                            {
+                                "file": "/version",
+
+                                "refresh": 30,
+
+                                "prefix": "", "postfix": ""
+                            }
+                        }
+                    ]
+                },
+
+                {
+                    "name": "Demo - Sensors",
+
+                    "access":
+                    [
+                        {"name": "Default", "token": "demo-sensors"}
+                    ],
+
+                    "summary": [],
+
+                    "servers":
+                    [
+                        {
+                            "name": "Darwin's Zoo Escape",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/0",
+                            "auth": "",
+
+                            "table":
+                            {
+                                "file": "/sensors",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": ""
+                                },
+
+                                "version": {
+                                    "column": -1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "status": {
+                                    "column": 3,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 3,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Uluru's Billabong Aquarium",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/1",
+                            "auth": "",
+
+                            "table":
+                            {
+                                "file": "/sensors",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": ""
+                                },
+
+                                "version": {
+                                    "column": -1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "status": {
+                                    "column": 3,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 3,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Outback Croc House",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/2",
+                            "auth": "",
+
+                            "table":
+                            {
+                                "file": "/sensors",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": ""
+                                },
+
+                                "version": {
+                                    "column": -1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "status": {
+                                    "column": 3,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 3,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Dundee's Wildlife Sanctuary",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/3",
+                            "auth": "",
+
+                            "table":
+                            {
+                                "file": "/sensors",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": ""
+                                },
+
+                                "version": {
+                                    "column": -1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "status": {
+                                    "column": 3,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 3,
+
+                                    "regex": ""
+                                }
+                            }
+                        },
+
+                        {
+                            "name": "Reptile Adventure Park",
+
+                            "timezone": -300,
+
+                            "host": "http://logcroc.com/demo/4",
+                            "auth": "",
+
+                            "table":
+                            {
+                                "file": "/sensors",
+
+                                "refresh": 5,
+
+                                "name": {
+                                    "column": 0,
+
+                                    "regex": ""
+                                },
+
+                                "version": {
+                                    "column": -1,
+
+                                    "regex": ""
+                                },
+
+                                "timestamp": {
+                                    "column": 1,
+
+                                    "regex": ""
+                                },
+
+                                "status": {
+                                    "column": 3,
+
+                                    "warning": ["WARNING"],
+                                    "error": ["ERROR"]
+                                },
+
+                                "message": {
+                                    "column": 3,
+
+                                    "regex": ""
+                                }
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
