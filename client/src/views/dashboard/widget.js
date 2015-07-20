@@ -10,6 +10,8 @@ var moment = require("moment");
 
 var React = require("react");
 
+var polyfill = require("../../polyfill.js");
+
 function expandServers(parent, servers)
 {
     var list = [];
@@ -69,7 +71,7 @@ function expandServers(parent, servers)
 function serverDetails(server)
 {
     var offset = isNaN(server.timezone) ? 0 :
-        ((new Date()).getTimezoneOffset() + parseInt(server.timezone)) * 60 * 1000;
+        ((new Date()).getTimezoneOffsetDST() + parseInt(server.timezone)) * 60 * 1000;
 
     var error = false; var warning = false;
 

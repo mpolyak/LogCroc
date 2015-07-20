@@ -328,7 +328,7 @@ function updateTable(client, dashboard, server, table, file, text)
         promises.push(saveEvents(client, dashboard, server, "version", versions));
 
     var now = new Date(); now = new Date(now.getTime() +
-        (now.getTimezoneOffset() * 60 * 1000) + (server.timezone * 60 * 1000));
+        (now.getTimezoneOffsetDST() * 60 * 1000) + (server.timezone * 60 * 1000));
 
     var save = {file: file, localtime: now.getTime(), rows: rows.length};
 
@@ -353,7 +353,7 @@ function updateStatus(client, dashboard, server, status, file, text)
     }
 
     var now = new Date(); now = new Date(now.getTime() +
-        (now.getTimezoneOffset() * 60 * 1000) + (server.timezone * 60 * 1000));
+        (now.getTimezoneOffsetDST() * 60 * 1000) + (server.timezone * 60 * 1000));
 
     var warning = status.status.warning;
     var error = status.status.error;
@@ -598,7 +598,7 @@ function updateVersion(client, dashboard, server, version, file, text)
     if (value)
     {
         var now = new Date(); now = new Date(now.getTime() +
-            (now.getTimezoneOffset() * 60 * 1000) + (server.timezone * 60 * 1000));
+            (now.getTimezoneOffsetDST() * 60 * 1000) + (server.timezone * 60 * 1000));
 
         promises.push(saveEvents(client, dashboard, server, "version", [{file: version.file, timestamp: now.getTime(), version: value}]));
 
@@ -651,7 +651,7 @@ function updateResource(client, dashboard, server, source)
             if (!refreshed || !refreshed.isValid() || !refresh || refreshed.add(refresh, "minutes").valueOf() <= now.getTime())
             {
                 now = new Date(now.getTime() +
-                    (now.getTimezoneOffset() * 60 * 1000) + (server.timezone * 60 * 1000));
+                    (now.getTimezoneOffsetDST() * 60 * 1000) + (server.timezone * 60 * 1000));
 
                 var file = template.date(server[source].file, now);
 

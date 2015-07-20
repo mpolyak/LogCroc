@@ -39,3 +39,15 @@ if (!Array.prototype.findIndex)
 }
 
 exports.findIndex = Array.prototype.findIndex;
+
+if (!Date.prototype.getTimezoneOffsetDST)
+{
+    Date.prototype.getTimezoneOffsetDST = function ()
+    {
+        return Math.max(
+            (new Date(this.getFullYear(), 0, 1)).getTimezoneOffset(),
+            (new Date(this.getFullYear(), 6, 1)).getTimezoneOffset());
+    };
+}
+
+exports.getTimezoneOffsetDST = Date.prototype.getTimezoneOffsetDST;

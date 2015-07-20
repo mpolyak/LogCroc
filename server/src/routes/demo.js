@@ -46,7 +46,7 @@ function getSensors(req, res, next)
 
     var now = new Date();
 
-    var random = seed(customer + Math.floor(now.getTime() / (1 * 60 * 1000)));
+    var random = seed(customer + Math.floor(now.getTime() / (1 * 60 * 1000)), {entropy: true});
 
     var html = "<html><head><style>table, th, td {border-collapse: collapse;} th, td {padding: 10px; border: 1px solid black;}</style></head><body><table><thead>" +
         "<tr>" +
@@ -109,7 +109,7 @@ function getVersion(req, res, next)
 
     var now = new Date();
 
-    var random = seed(customer.toString() + moment(now).startOf("day").toString());
+    var random = seed(customer.toString() + moment(now).startOf("day").toString(), {entropy: true});
 
     var version = (now.getFullYear() - 2013) + "." + ((now.getMonth() + 1) % 11) + "." + ((now.getDay() + 1) % 7) +
         "." + Math.floor(Number(moment(now).format("DDD")) * random());
@@ -143,7 +143,7 @@ function equipmentEvents(random, equipment)
         return [];
 
     var value = lerp(equipment.range[0] + ((equipment.range[1] - equipment.range[0]) * random()),
-            equipment.median, random());
+        equipment.median, random());
 
     var type = ""; var message = "";
 
@@ -198,7 +198,7 @@ function make(customer, timestamp)
     for (var time = moment(timestamp).startOf("minute").add(1, "minutes").valueOf();
         time <= now; time += 60 * 1000)
     {
-        var random = seed(customer.toString() + moment(time).format("D h:mm"));
+        var random = seed(customer.toString() + moment(time).format("D h:mm"), {entropy: true});
 
         var events = (random() < 0.01 ? [{type: "Fatal", message: "Crocodile escaped enclosure!"}] : []).concat(
             EQUIPMENT.map(equipment.bind(random)).reduce(concat, [])).map(string.bind(time)).join("\n");

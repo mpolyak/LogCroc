@@ -1,6 +1,6 @@
 {
   "name": "LogCrocServer",
-  "version": "0.15.0",
+  "version": "0.15.1",
   "private": true,
   "author": {
     "name": "Michael Polyak",
@@ -26,7 +26,7 @@
     "superagent": "~0.21.0",
     "cheerio": "~0.18.0",
     "ejs": "~1.0.0",
-    "seedrandom": "~2.3.10",
+    "seedrandom": "~2.4.2",
     "numeral": "~1.5.3",
     "memwatch-next": "~0.2.7",
     "heapdump": "~0.3.6",

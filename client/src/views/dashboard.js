@@ -334,7 +334,7 @@ var Dashboard = React.createClass(
                     <nav className="navbar navbar-inverse navbar-static-bottom" role="navigation">
                         <div className="container-fluid">
                             <ul className="nav navbar-nav">
-                                <li><a href="mailto:contact@logcroc.com">CONTACT</a></li>
+                                <li><a href="mailto:logcroc@gmail.com">CONTACT</a></li>
                                 <li><a href="/?demo">DEMO</a></li>
                                 <li><a href="/?meta">META</a></li>
                             </ul>

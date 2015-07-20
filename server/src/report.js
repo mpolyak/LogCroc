@@ -7,6 +7,7 @@ var redis  = require("redis");
 
 var Promise = require("promise");
 
+var polyfill = require("./polyfill.js");
 var checksum = require("./checksum.js");
 var cursor   = require("./cursor.js");
 var object   = require("./object.js");
@@ -269,7 +270,7 @@ function calculate(resolve)
     var servers = dashboard.servers.map(function (server)
     {
         var localtime = new Date(now.getTime() +
-            (now.getTimezoneOffset() * 60 * 1000) + (server.timezone * 60 * 1000));
+            (now.getTimezoneOffsetDST() * 60 * 1000) + (server.timezone * 60 * 1000));
 
         today = moment(localtime).startOf("day").valueOf();
 
