@@ -3,7 +3,7 @@ LogCroc
 
 LogCroc analyzes your servers log files, determines the status of each of your assets and presents the results as a simple visual dashboard enabling you to take action in real-time.
 
-http://logcroc.com
+http://logcroc.com/?eat=demo
 
 Dependencies
 ------------
